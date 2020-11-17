@@ -19,20 +19,19 @@ const TrackForm = () => {
         <Input value={name} onChangeText={changeName} placeHolder="Enter Name" />
       </Spacer>
       <Spacer>
-        {recording
-          ? <Button title="Stop" onPress={stopRecording} />
-          : <Button title="Start Recoding" onPress={startRecording} />
-        }
+        {recording ? (
+          <Button title="Stop" onPress={stopRecording} />
+        ) : (
+            <Button title="Start Recoding" onPress={startRecording} />
+          )}
       </Spacer>
       <Spacer>
-        {
-          !recording && locations.length ? (
-            <Button title="Save Recording" onPress={saveTrack} />
-          ) : null
-        }
+        {!recording && locations.length ? (
+          <Button title="Save Recording" onPress={saveTrack} />
+        ) : null}
       </Spacer>
     </>
-  )
-}
+  );
+};
 
-export default TrackForm
+export default TrackForm;
